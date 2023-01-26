@@ -39,3 +39,21 @@ var selectElement = document.querySelector('select');
 selectElement.onchange = function (e) {
     console.log(e.target.value);
 }
+
+
+//preventDefaul
+//stopPropagation
+
+
+var aElements = document.querySelectorAll("a");
+
+for( var i = 0; i < aElements.length; i ++){
+    aElements[i].onclick = function (e){
+    
+
+        if(!e.target.href.startsWith('https://f8.edu.vn')){
+
+           e.preventDefault(); // khi khong chua chuoi thiuf ngan chan hanh vi mac dinh
+        }
+    }
+}
